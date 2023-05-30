@@ -16,10 +16,10 @@ app.use(cors());
 app.use(express.json());  
 
 app.use('/crafts', cors(), craftsRouter);
-const passwordsRouter = require('./routes/passwords');
+const craftsRouter = require('./routes/passwords');
 
 app.use('/passwords', cors(), passwordsRouter);
-const craftsRouter = require('./routes/crafts');
+const passwordsRouter = require('./routes/crafts');
 
 //*********************************************************** 
 // Base URL
