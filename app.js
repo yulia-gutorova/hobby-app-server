@@ -15,10 +15,10 @@ app.use(cors());
 //middleware
 app.use(express.json());  
 
-const craftsRouter = require('./routes/passwords');
+const craftsRouter = require('./routes/crafts');
 app.use('/crafts', cors(), craftsRouter);
 
-const passwordsRouter = require('./routes/crafts');
+const passwordsRouter = require('./routes/passwords');
 app.use('/passwords', cors(), passwordsRouter);
 
 
