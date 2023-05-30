@@ -15,11 +15,12 @@ app.use(cors());
 //middleware
 app.use(express.json());  
 
-app.use('/crafts', cors(), craftsRouter);
 const craftsRouter = require('./routes/passwords');
+app.use('/crafts', cors(), craftsRouter);
 
-app.use('/passwords', cors(), passwordsRouter);
 const passwordsRouter = require('./routes/crafts');
+app.use('/passwords', cors(), passwordsRouter);
+
 
 //*********************************************************** 
 // Base URL
