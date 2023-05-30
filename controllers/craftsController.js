@@ -1,12 +1,13 @@
 const Crafts = require('../models/Crafts');
-const Booking = require('../models/Crafts');
+
 
 
 //*********************************************************** 
-// Return all crafts
+// Get all crafts
 
 exports.getAllCrafts = async (req, res) => {
     try {
+        console.log("inside get all crafts");
         const allCrafts = await Crafts.find();
         if(!allCrafts){
             res.status(404).json({message: 'No bookings exist'});
@@ -25,6 +26,7 @@ exports.getAllCrafts = async (req, res) => {
 
 exports.getCraftById = async (req, res) => {
      try {
+        console.log("inside get get craft by ID");
         const craft = await Crafts.findById({'_id': req.params.craftId});
             res.status(200).json(craft);             
     } catch (error) {
@@ -37,7 +39,9 @@ exports.getCraftById = async (req, res) => {
 // Create a new craft
 
 exports.createCraft = async (req, res) => { 
+
      try {
+        console.log("inside create new craft");
         const newCraft = new Crafts({
             type: req.body.type,
             name: req.body.name,
@@ -51,6 +55,7 @@ exports.createCraft = async (req, res) => {
     } catch (error) {
         res.status(500).json({message: error});
     } 
+
 }
 
 //*********************************************************** 
@@ -58,6 +63,7 @@ exports.createCraft = async (req, res) => {
 
 exports.deleteCraft = async (req, res) => {
      try {
+        console.log("inside delete craft by ID");
         res.status(200).json(await Crafts.deleteOne({'_id': req.params.craftId}));
     } catch (error) {
         res.staus(500).json({message: error});

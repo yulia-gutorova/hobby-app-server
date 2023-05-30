@@ -1,5 +1,5 @@
 const Passwords = require('../models/Passwords');
-const Cleaner = require('../models/Passwords');
+
 
 //*********************************************************** 
 // Return all passwords
@@ -26,6 +26,7 @@ exports.getPassword = async (req, res) => {
 
 exports.getPasswordById = async (req, res) => {
     try {
+        console.log("inside get all passwords");
          const password = await Passwords.findById({'_id': req.params.passwordId});
             res.status(200).json(password);              
     } catch (error) {
@@ -38,7 +39,7 @@ exports.getPasswordById = async (req, res) => {
 
 exports.createPassword = async (req, res) => { 
     try {
-        console.log('Inside create passsword');
+        console.log('Inside create new password');
          const newPassword = new Passwords({
             password: req.body.password,
         })
@@ -54,6 +55,7 @@ exports.createPassword = async (req, res) => {
 
 exports.deletePassword = async (req, res) => {
     try {
+        console.log("inside delete password");
          res.status(200).json(await Passwords.deleteOne({'_id': req.params.passwordId})); 
     } catch (error) {
         res.staus(500).json({message: error});
