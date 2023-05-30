@@ -76,6 +76,7 @@ exports.deleteCraft = async (req, res) => {
 exports.updateCraft = async (req, res) => {
      try {
         res.status(201).json(await Crafts.updateOne(
+            {'_id': req.params.craftId},
             {
                 $set: {
                     type: req.body.type,
