@@ -13,13 +13,18 @@ const CraftsSchema = mongoose.Schema({
         required: true
     },
 
+    description: {
+        type: String,
+        required: false
+    },
+
     materials: {
         type: String,
         required: true,
     },
 
     size: {
-        type: Number,
+        type: String,
         required: true
     },
 
