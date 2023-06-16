@@ -87,6 +87,7 @@ exports.updateCraft = async (req, res) => {
                     size: req.body.size,
                     price: req.body.price,
                     image: req.body.image,
+                    status: req.body.status
                 }
             }
         ));
