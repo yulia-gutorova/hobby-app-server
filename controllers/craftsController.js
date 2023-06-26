@@ -50,6 +50,7 @@ exports.createCraft = async (req, res) => {
             size: req.body.size,
             price: req.body.price,
             image: req.body.image,
+            imageObject: req.body.imageObject
         })
 
         res.status(201).json(await newCraft.save());

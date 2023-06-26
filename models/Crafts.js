@@ -33,6 +33,20 @@ const CraftsSchema = mongoose.Schema({
         required: true
     },
 
+    imageObject: {type: {
+
+        imageName: {
+            type: String,
+            required: true
+        },
+        imageUrl: {
+            type: String,
+            required: true
+        },
+    },
+    
+    }, 
+    
     image: {
         type: String,
         required: true
