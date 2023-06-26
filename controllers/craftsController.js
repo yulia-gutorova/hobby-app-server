@@ -45,7 +45,7 @@ exports.createCraft = async (req, res) => {
         const newCraft = new Crafts({
             type: req.body.type,
             name: req.body.name,
-            description: req.body.name.description,
+            description: req.body.description,
             materials: req.body.materials,
             size: req.body.size,
             price: req.body.price,
@@ -83,7 +83,7 @@ exports.updateCraft = async (req, res) => {
                 $set: {
                     type: req.body.type,
                     name: req.body.name,
-                    description: req.body.name.description,
+                    description: req.body.description,
                     materials: req.body.materials,
                     size: req.body.size,
                     price: req.body.price,
